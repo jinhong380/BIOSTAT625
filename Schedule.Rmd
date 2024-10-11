@@ -1,0 +1,12 @@
+---
+title: "Project schedule"
+author: "Jintong Hong"
+date: "2024-10-11"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Project Title:
