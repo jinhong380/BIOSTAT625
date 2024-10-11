@@ -1,8 +1,11 @@
 ---
 title: "Project schedule"
-author: "Jintong Hong"
+author: "Group 8"
 date: "2024-10-11"
 output: pdf_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ```{r setup, include=FALSE}
@@ -10,3 +13,72 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Project Title:
+
+## Group Member:
+
+```{text}
+Jennifer Guo - jeguo@umich.edu
+Jintong Hong - jintong@umich.edu
+Sihan Chen - 
+Wenjie Han - 
+```
+
+## Project Deadlines:
+
+Project Proposal - Nov.22nd/ Week 13
+
+Presentation - Week 15
+
+Report Deadline - Week 16
+
+## Group Rules:
+
+Sketch:
+
+1.  Having regular weekly group meeting to check the progress of the
+    project, resolve potential issues, and determine the plan and
+    distribution of assignments for next week.
+2.  The schedule will update regularly after the meetings; please check
+    the schedule to for any updates of the project.
+3.  Please update any changes to the main code and report in the group
+    chat (WhatsApp).
+
+## Group meeting time:
+
+Regular meeting time: TBD.\
+Next meeting time: TBD.
+
+## Project Progress:
+
+Week 7\
+
+## Weekly Schedule:
+
+**Week 7 - Project Start**
+
+1.  Find optimal datasets for the project -- Everyone;\
+2.  Determine the next group meeting time. -- Everyone send an optimal
+    time to the group chat;\
+3.  Determine the programming language will be using for the project --
+    Python;\
+4.  Adding group members to github and check if all member can access
+    the repository -- Please report any problem in the group chat;\
+5.  Rough plans for rest of the semester -- Sheryl;
+
+**Week 8**
+
+**Week 9**
+
+**Week 10**
+
+**Week 11**
+
+**Week 12**
+
+**Week 13 - Submit Proposal (Nov.22nd, Fri.)**
+
+**Week 14**
+
+**Week 15 - Presentation**
+
+**Week 16 - Wrap up and Submit the Final Report and Code**
