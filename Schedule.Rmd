@@ -56,7 +56,7 @@ Week 7\
 
 **Week 7 - Project Start**
 
-1.  Find optimal datasets for the project -- Everyone;\
+1.  Find optimal datasets and topic/models for the project -- Everyone;\
 2.  Determine the next group meeting time. -- Everyone send an optimal
     time to the group chat;\
 3.  Determine the programming language will be using for the project --
