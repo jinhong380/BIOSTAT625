@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 Jennifer Guo - jeguo@umich.edu
 Jintong Hong - jintong@umich.edu
 Sihan Chen - 
-Wenjie Han - 
+Wenjie Han - wenjieh@umich.edu
 ```
 
 ## Project Deadlines:
