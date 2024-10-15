@@ -46,20 +46,20 @@ Sketch:
 ## Group meeting time:
 
 Regular meeting time: TBD.\
-Next meeting time: Thursday 3pm, Week 8
+Next meeting time: Thursday 3pm, Week 8\
 
-#### Week 9 availability:
+### Week 9 availability:\
 
 ```{text}
-Jennifer Guo -
-Jintong Hong - 
-Sihan Chen - 
-Wenjie Han - 
+Jennifer Guo -  
+Jintong Hong -   
+Sihan Chen -  
+Wenjie Han -  
 ```
 
 ## Project Progress:
 
-Week 7\
+Week 7:\
 
 ## Weekly Schedule:
 
