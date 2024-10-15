@@ -46,7 +46,16 @@ Sketch:
 ## Group meeting time:
 
 Regular meeting time: TBD.\
-Next meeting time: TBD.
+Next meeting time: Thursday 3pm, Week 8
+
+#### Week 9 availability:
+
+```{text}
+Jennifer Guo -
+Jintong Hong - 
+Sihan Chen - 
+Wenjie Han - 
+```
 
 ## Project Progress:
 
@@ -65,20 +74,25 @@ Week 7\
     the repository -- Please report any problem in the group chat;\
 5.  Rough plans for rest of the semester -- Sheryl;
 
-**Week 8**
+**Week 8 - Data expoloration/ Data cleaning**
 
-**Week 9**
+**Week 9 - Data expoloration/ Data cleaning / Start simple data
+modeling**
 
-**Week 10**
+**Week 10 - Data modeling**
 
-**Week 11**
+**Week 11 - Write proposal draft/ Start final report (introduction)/
+Data modeling**
 
-**Week 12**
+**Week 12 - Revise proposal/ Model testing/ final report (data summary,
+modeling method)**
 
-**Week 13 - Submit Proposal (Nov.22nd, Fri.)**
+**Week 13 - Finalize and submit proposal (Nov.22nd, Fri.)/ Writing final
+report (result)**
 
-**Week 14**
+**Week 14 - Finalize code/ Prepare for presentation (power point,
+presenter, etc.)/ Revising final report (conclusion, abstract)**
 
-**Week 15 - Presentation**
+**Week 15 - Presentation/ Finalize report (references)**
 
 **Week 16 - Wrap up and Submit the Final Report and Code**
