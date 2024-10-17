@@ -14,12 +14,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Project Title:
 
+link to dataset:
+<https://www.kaggle.com/datasets/juhibhojani/house-price>
+
 ## Group Member:
 
 ```{text}
 Jennifer Guo - jeguo@umich.edu
 Jintong Hong - jintong@umich.edu
-Sihan Chen - 
+Sihan Chen - csihan@umich.edu
 Wenjie Han - wenjieh@umich.edu
 ```
 
@@ -45,10 +48,10 @@ Sketch:
 
 ## Group meeting time:
 
-Regular meeting time: TBD.\
+Regular meeting time: Wednesday at 1pm\
 Next meeting time: Thursday 3pm, Week 8\
 
-### Week 9 availability:\
+### Week 9 availability: 
 
 ```{text}
 Jennifer Guo -  
@@ -75,6 +78,11 @@ Week 7:\
 5.  Rough plans for rest of the semester -- Sheryl;
 
 **Week 8 - Data expoloration/ Data cleaning**
+
+1.  Data exploration
+2.  Data coding
+3.  Check if there's any weird things about the dataset itself
+4.  Find models we can use.
 
 **Week 9 - Data expoloration/ Data cleaning / Start simple data
 modeling**
