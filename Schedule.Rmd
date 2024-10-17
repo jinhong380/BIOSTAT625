@@ -36,8 +36,6 @@ Report Deadline - Week 16
 
 ## Group Rules:
 
-Sketch:
-
 1.  Having regular weekly group meeting to check the progress of the
     project, resolve potential issues, and determine the plan and
     distribution of assignments for next week.
@@ -49,39 +47,37 @@ Sketch:
 ## Group meeting time:
 
 Regular meeting time: Wednesday at 1pm\
-Next meeting time: Thursday 3pm, Week 8\
-
-### Week 9 availability: 
-
-```{text}
-Jennifer Guo -  
-Jintong Hong -   
-Sihan Chen -  
-Wenjie Han -  Wed 4-5pm, Thur 3-4pm
-```
+Next meeting time: Wednesday 1pm, Week 9
 
 ## Project Progress:
 
-Week 7:\
+Week 7:
+
+1.  Decided the dataset and topic of project (housing data, to predict
+    the housing price with given variables)
+2.  Decided the weekly meeting time (Wed. 1 pm, sph I).
+3.  Assigned work for week 8.\
 
 ## Weekly Schedule:
 
 **Week 7 - Project Start**
 
-1.  Find optimal datasets and topic/models for the project -- Everyone;\
+1.  Find optimal datasets and topic/models for the project -- Everyone;
 2.  Determine the next group meeting time. -- Everyone send an optimal
-    time to the group chat;\
+    time to the group chat;
 3.  Determine the programming language will be using for the project --
-    Python;\
+    Python;
 4.  Adding group members to github and check if all member can access
-    the repository -- Please report any problem in the group chat;\
+    the repository -- Please report any problem in the group chat;
 5.  Rough plans for rest of the semester -- Sheryl;
 
 **Week 8 - Data expoloration/ Data cleaning**
 
-1.  Data exploration
-2.  Data coding
-3.  Check if there's any weird things about the dataset itself
+Everyone:
+
+1.  Data exploration.
+2.  Coding for categorical data.
+3.  Check if there's any weird things about the dataset itself.
 4.  Find models we can use.
 
 **Week 9 - Data expoloration/ Data cleaning / Start simple data
