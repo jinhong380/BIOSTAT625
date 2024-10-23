@@ -1,4 +1,7 @@
 -Figuring out appropriate dataset to analyze, looking at size, complexity, ability to analyze
 -cannot push the dataset itself to Github, it’s too large
 -need to convert objects in raw dataset to numerical or categorical variables
+-conversion of variables depending on figuring out the "real world" meaning of each variable
 -many variables in data, more difficult to do linear regression, more likely that machine learning will work better
+-handling missing values
+-
