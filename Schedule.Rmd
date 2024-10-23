@@ -56,7 +56,16 @@ Week 7:
 1.  Decided the dataset and topic of project (housing data, to predict
     the housing price with given variables)
 2.  Decided the weekly meeting time (Wed. 1 pm, sph I).
-3.  Assigned work for week 8.\
+3.  Assigned work for week 8.
+
+Week 8:
+
+1.  Checked variables and we decided to use the following variables:\
+    Prices (dependent variable)/ location/ Carpet Area/ Status/ Floor/
+    Transaction/ Furnishing/ facing/ overlooking/ Bathroom/ Balcony/ Car
+    Parking/ Onwership/
+
+2.  Decided to use modelling methods: 1. elastic net; 2. Random Forest;
 
 ## Weekly Schedule:
 
@@ -82,6 +91,20 @@ Everyone:
 
 **Week 9 - Data expoloration/ Data cleaning / Start simple data
 modeling**
+
+1.  Check extreme values/data patterns/ create plot (scatter for
+    numerical/ barplot for categorical) for each variables/ Do one hot
+    encoding for categorical variables (not for location)
+    -   Sihan: Prices (dependent variable)/ location/ Carpet Area
+
+    -   Jintong: status/ Floor/ Transaction
+
+    -   Jennifer: Furnishing/ facing/ overlooking
+
+    -   Haven: Bathroom/ Balcony/ Car Parking/ Onwership
+2.  Do data cleaning for the missing values (imputations)
+3.  Do some research on the models (1. Elastic net; 2. Random Forest) -
+    Everyone
 
 **Week 10 - Data modeling**
 
