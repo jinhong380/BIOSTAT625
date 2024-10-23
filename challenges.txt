@@ -1,0 +1,13 @@
+Week 8
+-Figuring out appropriate dataset to analyze, looking at size, complexity, ability to analyze in semester-long project
+
+Week 9
+-cannot push the dataset itself to Github, it’s too large
+-need to convert objects in raw dataset to numerical or categorical variables
+-conversion of variables depending on figuring out the "real world" meaning of each variable
+  -examples: number of bathrooms, covered or uncovered parking
+-many variables in data, more difficult to do linear regression, more likely that machine learning will work better
+-handling missing values
+-deciding between trying to predict variable “amount” or “price” 
+	-“amount” depends on common areas that we don't have much data for, so we decided on "price"
+-
