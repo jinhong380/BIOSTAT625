@@ -94,7 +94,14 @@ modeling**
 
 1.  Check extreme values/data patterns/ create plot (scatter for
     numerical/ barplot for categorical) for each variables/ Do one hot
-    encoding for categorical variables (not for location)
+    encoding for categorical variables (not for location)/ normalizing
+    the numerical variables if possible (create a separate column for
+    this). Please refer to following link for more information of
+    normalization (more info can also be found in ppt sent during our
+    week 8 meeting):
+
+    <https://www.datacamp.com/tutorial/normalization-in-machine-learning>
+
     -   Sihan: Prices (dependent variable)/ location/ Carpet Area
 
     -   Jintong: status/ Floor/ Transaction
@@ -102,7 +109,9 @@ modeling**
     -   Jennifer: Furnishing/ facing/ overlooking
 
     -   Haven: Bathroom/ Balcony/ Car Parking/ Onwership
-2.  Do data cleaning for the missing values (imputations)
+
+2.  Do data cleaning for the missing values (imputations) - optional
+
 3.  Do some research on the models (1. Elastic net; 2. Random Forest) -
     Everyone
 
