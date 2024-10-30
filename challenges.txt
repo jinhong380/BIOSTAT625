@@ -16,4 +16,5 @@ Week 10
 -data normalization/standardization to prep data for modeling
 -dealing with outliers (a few homes are much larger in floor size and much more expensive than most others in the dataset)
 -dealing with N/A values
+-figuring out how we will verify that our model(s) are generally correct
 -getting everything done before the semester ends/ time management
