@@ -67,6 +67,24 @@ Week 8:
 
 2.  Decided to use modelling methods: 1. elastic net; 2. Random Forest;
 
+Week 9:
+
+1.  Data Cleaning:
+    -   Keep all missing values and we will put them all together next
+        Tuesday;
+
+    -   For elastic net, we might want to delete the extreme values and
+        using numeric version of Bathroom and Balcony; for random
+        forest, we would just keep the extreme values and using
+        categorical Bathroom and Balcony;
+2.  Data Modeling:
+    -   Jennifer/ Sihan: elastic net
+
+    -   Jintong/ Wenjie: random forest
+3.  Extra Information Search (for location) - either income or tax
+    -   we want to use clustering for elastic net when processing the
+        location variable.
+
 ## Weekly Schedule:
 
 **Week 7 - Project Start**
@@ -115,7 +133,28 @@ modeling**
 3.  Do some research on the models (1. Elastic net; 2. Random Forest) -
     Everyone
 
-**Week 10 - Data modeling**
+**Week 10 - Data modeling preparation**
+
+1.  Upload all cleaned variables and corresponding graphs before next
+    Tuesdays meeting - **Everyone**
+2.  Indian location income search - **Wenjie**
+3.  Write simple sketch for:
+    -   introduction (background information of housing& purpose of the
+        modeling) - **Jennifer**
+
+    -   data cleaning (**Everyone**) + how we are going to separate the
+        datasets to testing and training set - **Wenjie +** Clustering
+        methods used for location (**Jintong/** write for bothIsolation
+        Forest or Local Outlier Factor (LOF))
+
+    -   modeling methods (random forest/elastic net) - each group write
+        their own version of modeling methods and we will put them
+        together next week during the meeting. – **Everyone**
+
+    -   how we are going to test the accuracy of the predictions (cross
+        validation) - **Sihan**
+
+    -   references if used any - **Everyone**
 
 **Week 11 - Write proposal draft/ Start final report (introduction)/
 Data modeling**
