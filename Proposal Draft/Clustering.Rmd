@@ -1,0 +1,26 @@
+---
+title: "Clustering"
+author: "Jintong Hong"
+date: "2024-11-03"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+To address the high dimensionality of our location variable, which contains 81 distinct location categories, we employed a systematic clustering approach based on the India's online economic indicators to create meaningful geographical groupings. The clustering process utilizes key economic metrics **(GDP / household income / or tax revenue)** as features to identify locations with similar economic profiles **(resources)**, and iteratvely assigns data points to distinct clusters based on their similarity.
+
+######
+Choose from the three methods:
+K-Means: This algorithm partitions the data into a predetermined number of clusters (k). It assigns points to the nearest cluster centroid and then updates the centroids based on the mean of the assigned points.
+Hierarchical Clustering: This method builds a tree of clusters. It can be agglomerative (merging clusters) or divisive (splitting clusters).
+DBSCAN: This density-based method groups together points that are closely packed together while marking outliers that lie alone in low-density regions.
+######
+
+This dimension reduction approach effectively reduce the original 81 categories into a manageable set of economically homogeneous clusters, allowing for more meaningful analysis on the property price while preserving the underlying economic patterns in the housing data.
+
+
+
+
+

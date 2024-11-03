@@ -144,7 +144,7 @@ modeling**
 
     -   data cleaning (**Everyone**) + how we are going to separate the
         datasets to testing and training set - **Wenjie +** Clustering
-        methods used for location (**Jintong/** write for bothIsolation
+        methods used for location (**Jintong/** write for both Isolation
         Forest or Local Outlier Factor (LOF))
 
     -   modeling methods (random forest/elastic net) - each group write
