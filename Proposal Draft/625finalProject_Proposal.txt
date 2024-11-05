@@ -1,0 +1,10 @@
+simple sketch/outline:
+
+intro:
+-Dataset of interest: house prices in India.
+-When people sell homes, they have to decide what to set the starting house price at, but the true "value" of a home is based on many factors.
+-Our goal is to predict house prices by using attributes of the home (such as location, floor area, or number of balconies).
+-Using two different models (Elastic Net and Random Forest) to compare against each other and see which one works better.
+
+Elastic Net:
+-Elastic Net is a regression method.
