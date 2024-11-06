@@ -159,6 +159,15 @@ modeling**
 **Week 11 - Write proposal draft/ Start final report (introduction)/
 Data modeling**
 
+1. Writing proposal: (On Google Document)
+ - Data exploration - Jintong
+ - Random Forest - Jintong Hevan
+ - Elastic Net - Jennifer Sihan
+ - Accuracy Test - Sihan
+2. Do further one hot encoding for facing/furnishing/overlooking - Jintong
+3. Upload the complete dataset to github - Jintong
+4. Do clustering if possible (optional) - Sihan
+
 **Week 12 - Revise proposal/ Model testing/ final report (data summary,
 modeling method)**
 
