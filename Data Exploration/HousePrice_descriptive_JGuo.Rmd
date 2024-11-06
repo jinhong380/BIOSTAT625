@@ -34,14 +34,14 @@ head(data)
 df = data.frame(data)
 ```
 
-##Cleaning and Encoding
+## Cleaning and Encoding
 
 Cleaning data and one-hot encoding for Furnishing/ Facing/ Overlooking
 
 ## Furnishing
 
 Levels for Furnishing are either Unfurnished, Semi-Furnished, or Furnished
-NA subjects are not removed, they simply have 0s in all columns of the one-hot matrix.
+Subjects with missing data are indicated with "1" in the last column of the one-hot matrix.
 
 ```{r mysize=T,size='\\footnotesize', echo=T,eval=T}
 #summary(data$Furnishing)
@@ -51,13 +51,19 @@ unique(data$Furnishing)
 ggplot(data, aes(x=Furnishing)) + geom_bar()
 
 onehot_Furnishing = model.matrix(~Furnishing-1, data=df) [,-1]
+na_Furnishing = ifelse(data$Furnishing == "", 1, 0)
+onehot_Furnishing = cbind ( onehot_Furnishing, na_Furnishing )
+
+#i = rep(1:nrow(data))
+#na_Furnishing = all(onehot_Furnishing[i,] == 0)
+#1*which(onehot_Furnishing[i,] == 0)
 
 ```
 
 ## Facing
 
 This is the cardinal direction that the home is facing. N,E,S,W, NE, NW, SE, SW.
-NA subjects are not removed, they simply have 0s in all columns of the one-hot matrix.
+Subjects with missing data are indicated with "1" in the last column of the one-hot matrix.
 
 ```{r mysize=T,size='\\footnotesize', echo=T,eval=T}
 
@@ -68,14 +74,15 @@ unique(data$facing)
 ggplot(data, aes(x=facing)) + geom_bar()
 
 onehot_facing = model.matrix(~facing-1, data=df) [,-1]
-
+na_facing = ifelse(data$facing == "", 1, 0)
+onehot_facing = cbind ( onehot_facing, na_facing )
 
 ```
 
 ## Overlooking
 
-Overlooking can have multiple things listed for each home/subject. Each home may or may not overlook a "Garden/Park", "Main Road", and/or "Pool".
-NA subjects are not removed, they simply have 0s in all columns of the one-hot matrix.
+Overlooking can have multiple things listed for each home/subject. Each home may or may not overlook a "Garden/Park", "Main Road", and/or "Pool". Some homes have "Not Available" explicity listed, but others simply have no data at all for this variable.
+Subjects with missing data are indicated with "1" in the last column of the one-hot matrix.
 
 ```{r mysize=T,size='\\footnotesize', echo=T,eval=T}
 
@@ -84,10 +91,13 @@ data$overlooking = as.factor(data$overlooking)
 unique(data$overlooking)
 #unique(unlist(strsplit(data$overlooking,", ")))
 
-#ggplot(data, aes(x=overlooking)) + geom_bar()
+ggplot(data, aes(x=overlooking)) + geom_bar()
 
-onehot_overlooking = cbind(1*grepl("Garden/Park", data$overlooking), 1*grepl("Main Road", data$overlooking), 1*grepl("Pool", data$overlooking))
-colnames(onehot_overlooking) = c("Garden/Park", "Main Road", "Pool")
+onehot_overlooking = cbind(1*grepl("Garden/Park", data$overlooking), 1*grepl("Main Road", data$overlooking), 1*grepl("Pool", data$overlooking), 1*grepl("Not Available", data$overlooking))
+colnames(onehot_overlooking) = c("Garden/Park", "Main Road", "Pool", "Not Available")
+
+na_overlooking = ifelse(data$overlooking == "", 1, 0)
+onehot_overlooking = cbind ( onehot_overlooking, na_overlooking )
 
 #ggplot(onehot_overlooking, aes(x=onehot_overlooking)) + geom_bar()
 
