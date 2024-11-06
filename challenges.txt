@@ -18,3 +18,6 @@ Week 10
 -dealing with N/A values
 -figuring out how we will verify that our model(s) are generally correct
 -getting everything done before the semester ends/ time management
+
+Week 11
+-Dealing with outliers in dataset - Especially in the outcome variable of "house price". Filtered out of the data sets? Using clustering methods?
