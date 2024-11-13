@@ -171,11 +171,19 @@ Data modeling**
 3.  Upload the complete dataset to github - Jintong
 4.  Do clustering if possible (optional) - Sihan
 
-**Week 12 - Revise proposal/ Model testing/ final report (data summary,
-modeling method)**
+**Week 12 - Revise proposal/ Modeling / final report (data summary)**
 
-**Week 13 - Finalize and submit proposal (Nov.22nd, Fri.)/ Writing final
-report (result)**
+1.  Start to write the draft for final report - everyone
+    -   Each member write their own data exploration section, include
+        the graphs and tables if necessary (upload the graph used to
+        github as a backup).
+    -   Could start to write the modeling section (optional)
+2.  Conduct data modeling in groups - everyone
+3.  Clustering for location - Sihan, but we will all help if anything
+    goes wrong\~
+
+**Week 13 - Finalize and submit proposal (Nov.22nd, Fri.)/ Model
+Testing/ Writing final report (result, , modeling method)**
 
 **Week 14 - Finalize code/ Prepare for presentation (power point,
 presenter, etc.)/ Revising final report (conclusion, abstract)**
