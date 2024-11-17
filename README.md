@@ -9,8 +9,25 @@ Please work on **individual coding files** whenever possible. **Merging** might 
 
 1. Please turn all pre-processed datasets into CSV files, and upload the dataset and code to the folder "data_exploration". *(finished)* 
 
-2. The processed whole data set is named as "housing_cleaned_price.csv", with price outliers deleted. The "housing_cleaned_Price+Carpet.csv" deleted the outliers for both carpet area and price.
-   p.s. the previous version of "housing_cleaned.csv" could could be reproduced with datasets within the Data section (remember to change the path before import the datasets) using Total_data.ipynb.
+2. The processed whole data set is named as "housing_cleaned_price.csv", with price outliers deleted.
+  
+   The "housing_cleaned_Price+Carpet.csv" deleted the outliers for both carpet area and price.
+   
+   *p.s. the previous version of "housing_cleaned.csv" could could be reproduced with datasets within the Data section (remember to change the path before import the datasets) using Total_data.ipynb.*
+
+5. The final version of the cleaned datasets with location properly clustered by economic status is stored in the "Data Exploration" folder
+   
+   1) **housing_cleaned_final.csv**
+      
+      path: Data Exploration/housing_cleaned_final.csv;
+      
+      Description: with missing values.
+      
+   3) file name **housing_rmna_cleaned_final.csv**
+
+      path: Data Exploration/housing_rmna_cleaned_final.csv;
+
+      Description: with no missing value.
 
 ## Proposal: (100%)
 
