@@ -29,6 +29,8 @@ Please work on **individual coding files** whenever possible. **Merging** might 
 
       Description: with no missing value.
 
+      Special Reminder: The 'Transaction', 'Total Floors','location','State', 'Current Floor' variables can be deleted when conducting the modeling process as they are either transformed to categorical variable or already conducted one-hot encoding and turned to other variables.
+
 ## Proposal: (100%)
 
 Please find the final proposaln "Project Proposal_Final.pdf" in folder "Proposal Draft".
