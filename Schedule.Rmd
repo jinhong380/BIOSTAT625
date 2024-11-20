@@ -30,7 +30,7 @@ Wenjie Han - wenjieh@umich.edu
 
 Project Proposal - Nov.22nd/ Week 13
 
-Presentation - Week 15
+Presentation - Dec. 6th
 
 Report Deadline - Week 16
 
@@ -183,7 +183,15 @@ Data modeling**
     goes wrong\~
 
 **Week 13 - Finalize and submit proposal (Nov.22nd, Fri.)/ Model
-Testing/ Writing final report (result, , modeling method)**
+Testing/ Writing final report (data summary, result, modeling method)**
+
+1.  Keep working on the models
+2.  Writing final report
+    -   Each member write their own data exploration section, include
+        the graphs and tables if necessary (upload the graph used to
+        github as a backup).
+    -   Write the modeling and accuracy testing section.
+    -   Write corresponding results (optional).
 
 **Week 14 - Finalize code/ Prepare for presentation (power point,
 presenter, etc.)/ Revising final report (conclusion, abstract)**
