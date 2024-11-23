@@ -354,7 +354,7 @@ display: none;
 
 <div id="biostat625---final-project-group-8" class="section level1">
 <h1>BIOSTAT625 - Final Project Group 8</h1>
-<p>This is <strong>WEEK 12</strong></p>
+<p>This is <strong>WEEK 13</strong></p>
 <p>The schedule rmd will be updated weekly, please check for any project
 updates.<br />
 Please work on <strong>individual coding files</strong> whenever
@@ -365,28 +365,41 @@ possible. <strong>Merging</strong> might fail.</p>
 <li><p>Please turn all pre-processed datasets into CSV files, and upload
 the dataset and code to the folder “data_exploration”.
 <em>(finished)</em></p></li>
-<li><p>The processed whole data set is named as
-“housing_cleaned_price.csv”, with price outliers deleted.</p>
-<p>The “housing_cleaned_Price+Carpet.csv” deleted the outliers for both
-carpet area and price.</p>
+<li><p>The processed whole data set is named as “housing_cleaned.csv”.
+(We shouldn’t delete outliers for price) The “housing_cleaned_price.csv”
+deleted the outliers for price. The “housing_cleaned_Price+Carpet.csv”
+deleted the outliers for both carpet area and price.</p>
 <p><em>p.s. the previous version of “housing_cleaned.csv” could could be
 reproduced with datasets within the Data section (remember to change the
 path before import the datasets) using Total_data.ipynb.</em></p></li>
-<li><p>The final version of the cleaned datasets with location properly
-clustered by economic status is stored in the “Data Exploration”
-folder</p>
+<li><p>The version of the cleaned datasets (“housing_cleaned.csv”) with
+location properly clustered by economic status are stored in the “Data
+Exploration/Clustering/data” folder, named
+“housing_clean_clustering.csv”.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>housing_cleaned_final.csv</strong></p>
-<p>path: Data Exploration/housing_cleaned_final.csv;</p>
+<p>path: Data Exploration/housing_cleaned/housing_cleaned_final.csv;</p>
 <p>Description: with missing values.</p></li>
 <li><p>file name <strong>housing_rmna_cleaned_final.csv</strong></p>
-<p>path: Data Exploration/housing_rmna_cleaned_final.csv;</p>
+<p>path: Data
+Exploration/housing_cleaned/housing_rmna_cleaned_final.csv;</p>
 <p>Description: with no missing value.</p>
 <p>Special Reminder: The ‘Transaction’, ‘Total
-Floors’,‘location’,‘State’, ‘Current Floor’ variables can be deleted
-when conducting the modeling process as they are either transformed to
-categorical variable or already conducted one-hot encoding and turned to
-other variables.</p></li>
+Floors’,‘location’,‘State’, ‘Current Floor’, ‘Carpet Area’ variables can
+be deleted when conducting the modeling process as they are either
+transformed to categorical variable or already conducted one-hot
+encoding and turned to other variables.</p></li>
+</ol></li>
+<li><p>The final version (all categorical variable processed with
+one-hot encoding) of the datasets are stored in /Data Exploration:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>final_OneHotEncoded_housing.csv</strong>: without
+outliers deleted for price</p>
+<p>path: Data Exploration/final_OneHotEncoded_housing.csv;</p></li>
+<li><p><strong>final_rmna_OneHotEncoded_housing.csv</strong>: without
+outliers deleted for price and no observations with missing values</p>
+<p>path: Data Exploration/final_rmna_OneHotEncoded_housing.csv;</p></li>
+<li><p>Will be updated: datasets with outliers</p></li>
 </ol></li>
 </ol>
 </div>
