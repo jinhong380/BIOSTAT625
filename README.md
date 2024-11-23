@@ -41,7 +41,13 @@ Please work on **individual coding files** whenever possible. **Merging** might 
 
        path: Data Exploration/final_rmna_OneHotEncoded_housing.csv;
       
-   3) Will be updated: datasets with outliers
+   3) **final_full_OneHotEncoded_housing.csv**: with no outliers deleted
+  
+      path: Data Exploration/final_full_OneHotEncoded_housing.csv;
+      
+   4) **final_full_rmna_OneHotEncoded_housing.csv**: with no outliers deleted and no observations with missing values
+  
+      path: Data Exploration/final_full_rmna_OneHotEncoded_housing.csv;
 
 ## Proposal: (100%)
 
