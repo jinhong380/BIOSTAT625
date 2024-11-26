@@ -1,0 +1,130 @@
+---
+title: "elastic net"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-11-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+library(readr)
+library(glmnet)
+housing_data <- read_csv("/Users/chensihan/Desktop/final_rmna_OneHotEncoded_housing copy.csv")
+set.seed(123)
+
+```
+```{r}
+attach(housing_data)
+clean_data <- na.omit(housing_data)
+X <- clean_data[, -which(names(clean_data) == "Price (in rupees)")] 
+Y <- clean_data$`Price (in rupees)`
+train_index <- sample(seq_len(nrow(clean_data)), size = 0.8 * nrow(clean_data))
+X_train <- X[train_index, ]
+X_test <- X[-train_index, ]
+Y_train <- Y[train_index]
+Y_test <- Y[-train_index]
+X_train_matrix <- as.matrix(X_train)
+X_test_matrix <- as.matrix(X_test)
+
+```
+
+
+
+```{r}
+for(i in 0:20){
+  elastic_net[i] <- cv.glmnet(X_train_matrix, Y_train, alpha = i/20)
+  best_lambda[i] <- elastic_net[i]$lambda.min
+  predicted_prices[i] <- predict(elastic_net[i], newx = X_test_matrix, s = "lambda.min")
+  results[i] <- data.frame(Actual = Y_test, Predicted = as.vector(predicted_prices[,i]))
+  rmse[i] <- sqrt(mean((results[i]$Actual - results[i]$Predicted)^2))
+  mae[i] <- mean(abs(results[i]$Actual - results[i]$Predicted))
+}
+
+```
+```{r}
+# Initialize storage
+elastic_net <- list()  # A list to store models
+best_lambda <- numeric(21)  # Numeric vector for best lambda values
+predicted_prices <- list()  # A list to store predictions
+results <- list()  # A list to store data frames with actual and predicted values
+rmse <- numeric(21)  # Numeric vector for RMSE values
+mae <- numeric(21)  # Numeric vector for MAE values
+alpha=numeric(21)
+for (i in 0:20) {
+  alpha[i+1] = i/20
+  # Fit elastic net model with alpha = i/20
+  elastic_net[[i + 1]] <- cv.glmnet(X_train_matrix, Y_train, alpha = i / 20)
+  
+  # Store the best lambda value
+  best_lambda[i + 1] <- elastic_net[[i + 1]]$lambda.min
+  
+  # Predict on the test set using the best lambda
+  predicted_prices[[i + 1]] <- predict(elastic_net[[i + 1]], newx = X_test_matrix, s = "lambda.min")
+  
+  # Combine actual and predicted values
+  results[[i + 1]] <- data.frame(Actual = Y_test, Predicted = as.vector(predicted_prices[[i + 1]]))
+  
+  # Compute RMSE and MAE
+  rmse[i + 1] <- sqrt(mean((results[[i + 1]]$Actual - results[[i + 1]]$Predicted)^2))
+  mae[i + 1] <- mean(abs(results[[i + 1]]$Actual - results[[i + 1]]$Predicted))
+}
+
+# Results for RMSE and MAE
+print(rmse)
+print(mae)
+
+```
+```{r}
+
+plot(alpha,rmse)
+```
+
+
+
+
+```{r}
+# Plot the lambda trace
+plot(fit, xvar = "lambda", label = TRUE)
+# Cross-validation
+cv_fit <- cv.glmnet(X, y, alpha = 0.5)
+
+# Plot cross-validation results
+plot(cv_fit)
+
+# Residuals plot
+plot(predicted, residuals, xlab = "Fitted Values", ylab = "Residuals", main = "Residuals vs Fitted")
+abline(h = 0, col = "red")
+library(ggplot2)
+library(reshape2)
+
+# Extract coefficients
+coefficients <- as.matrix(coef(fit))
+coefficients_df <- melt(coefficients)
+
+# Heatmap
+ggplot(coefficients_df, aes(Var2, Var1, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", high = "red", mid = "white", midpoint = 0) +
+  labs(x = "Lambda", y = "Predictors", fill = "Coefficient Value") +
+  theme_minimal()
+
+# Predictions on test data
+predicted_test <- predict(cv_fit, newx = X_test, s = "lambda.min")
+
+
+# Predicted vs Actual plot
+plot(y_test, predicted_test, xlab = "Actual Values", ylab = "Predicted Values", main = "Predicted vs Actual")
+abline(0, 1, col = "blue")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
