@@ -196,6 +196,33 @@ Testing/ Writing final report (data summary, result, modeling method)**
 **Week 14 - Finalize code/ Prepare for presentation (power point,
 presenter, etc.)/ Revising final report (conclusion, abstract)**
 
+1.  Finalize the code and upload the results of the modeling to github
+    before next Wednesday meeting.
+2.  Slides for the presentation：
+    -   Background Information & Proposal
+        -   The purpose of the project - Slides+presenter: Jennifer
+        -   Modeling methods - Slides: Jennifer/ presenter: Jintong
+    -   Data part
+        -   General Data description - 1 slide - Presenter: Haven /
+            Slides: Jintong
+        -   How was missing data handled - 1 slide - Presenter: Haven /
+            Slides: Jintong
+        -   How was numerical data manipulated - 1 slide - Presenter:
+            Haven / Slides: Jintong
+        -   How was categorical data manipulated - 1 slide (especially
+            clustering with location) - Presenter: Sihan
+            -   one-hot-encoding - Slides:Jintong
+            -   clustering for location - Slides+presenter: Sihan
+            -   outliers - Slides+presenter: Sihan
+    -   Modeling so far
+        -   Each group present this part with 1-2 slides
+3.   Writing final report
+    -   Each member write their own data exploration section, include
+        the graphs and tables if necessary (upload the graph used to
+        github as a backup).
+    -   Write the modeling and accuracy testing section.
+    -   Write corresponding results.
+
 **Week 15 - Presentation (Dec.6th, Fri., second group)/ Finalize report
 (references)**
 

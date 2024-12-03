@@ -1,0 +1,155 @@
+---
+title: "elastic net"
+output:
+  pdf_document: default
+  html_document: default
+date: "2024-11-20"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(readr)
+library(glmnet)
+housing_data <- read_csv("/Users/chensihan/Documents/GitHub/BIOSTAT625/Data Exploration/final_full_rmna_OneHotEncoded_housing.csv")
+set.seed(7)
+
+```
+
+```{r}
+attach(housing_data)
+
+#transform price into log_price
+housing_data$log_price=log(housing_data$`Price (in rupees)`)
+X <- housing_data[, -which(names(housing_data) == "Price (in rupees)" | names(housing_data) == "log_price")] 
+Y <- housing_data$log_price
+#divide into training (80%) and testing (20%) dataset
+train_index <- sample(seq_len(nrow(housing_data)), size = 0.8 * nrow(housing_data))
+X_train <- X[train_index, ]
+X_test <- X[-train_index, ]
+Y_train <- Y[train_index]
+Y_test <- Y[-train_index]
+X_train_matrix <- as.matrix(X_train)
+X_test_matrix <- as.matrix(X_test)
+```
+
+```{r}
+# Initialize storage
+elastic_net <- list()  # A list to store models
+best_lambda <- numeric(21)  # Numeric vector for best lambda values
+predicted_prices <- list()  # A list to store predictions
+results <- list()  # A list to store data frames with actual and predicted values
+rmse <- numeric(21)  # Numeric vector for RMSE values
+mae <- numeric(21)  # Numeric vector for MAE values
+alpha=numeric(21) # Numeric vector for alpha values
+mape=numeric(21) # Numeric vector for MAPE values
+for (i in 0:20) {
+  alpha[i+1] = i/20
+  # Fit elastic net model with alpha = i/20
+  elastic_net[[i + 1]] <- cv.glmnet(X_train_matrix, Y_train, alpha = i / 20)
+  
+  # Store the best lambda value (we choose lambda where MSE is smallest)
+  best_lambda[i + 1] <- elastic_net[[i + 1]]$lambda.min
+  
+  # Predict on the test set using the best lambda
+  predicted_prices[[i + 1]] <- predict(elastic_net[[i + 1]], newx = X_test_matrix, s = "lambda.min")
+  
+  # Combine actual and predicted values
+  results[[i + 1]] <- data.frame(Actual = Y_test, Predicted = as.vector(predicted_prices[[i + 1]]))
+  # Compute RMSE, MAE, MAPE
+  rmse[i + 1] <- sqrt(mean((results[[i + 1]]$Actual - results[[i + 1]]$Predicted)^2))
+  mae[i + 1] <- mean(abs(results[[i + 1]]$Actual - results[[i + 1]]$Predicted))
+  mape[i+1] <- mean(abs((results[[i + 1]]$Actual - results[[i + 1]]$Predicted) / results[[i + 1]]$Actual)) * 100
+}
+```
+
+```{r}
+# Results for RMSE, MAE and MAPE
+print(rmse)
+which.min(abs(rmse))
+```
+
+```{r}
+print(mae)
+which.min(abs(mae))
+```
+
+```{r}
+print(mape)
+which.min(abs(mape))
+```
+
+```{r}
+plot(alpha,rmse)
+plot(alpha,mape)
+plot(alpha, mae)
+```
+
+The best alpha is 1/20, the best lambda is 0.0180224
+
+```{r}
+fit= cv.glmnet(X_train_matrix, Y_train, alpha = 0)
+plot(fit)
+# two methods to choose lambda
+fit$lambda.1se
+fit$lambda.min
+```
+
+
+
+```{r}
+fit_final= glmnet(X_train_matrix, Y_train, alpha = 0)
+plot(fit_final, xvar = "norm")     # Coefficients vs. L1 Norm
+plot(fit_final, xvar = "lambda")   # Coefficients vs. Log Lambda
+plot(fit_final, xvar = "dev")      # Coefficients vs. Fraction Deviance Explained
+
+```
+```{r}
+# Compute RMSE, MAE, MAPE and R_squared in training dataset
+predicted_prices<- predict(fit_final, newx = X_train_matrix,s=0.0180224)
+  
+  # Combine actual and predicted values
+results<- data.frame(Actual = Y_train, Predicted = as.vector(predicted_prices))
+  
+  rmse<- sqrt(mean((results$Actual - results$Predicted)^2))
+  mae<- mean(abs(results$Actual - results$Predicted))
+  mape<- mean(abs((results$Actual - results$Predicted) / results$Actual)) * 100
+  rmse
+  mae
+  mape
+
+
+y_mean <- mean(Y_train)
+SS_total <- sum((Y_train - y_mean)^2)
+SS_residual <- sum((Y_train - predicted_prices)^2)
+R_squared <- 1 - (SS_residual / SS_total)
+print(R_squared)
+
+```
+
+
+```{r}
+# Compute RMSE, MAE, MAPE and R_squared in testing dataset
+predicted_prices<- predict(fit_final, newx = X_test_matrix,s=0.0180224)
+  
+  # Combine actual and predicted values
+results<- data.frame(Actual = Y_test, Predicted = as.vector(predicted_prices))
+  # Compute RMSE, MAE, MAPE
+  rmse<- sqrt(mean((results$Actual - results$Predicted)^2))
+  mae<- mean(abs(results$Actual - results$Predicted))
+  mape<- mean(abs((results$Actual - results$Predicted) / results$Actual)) * 100
+  rmse
+  mae
+  mape
+  
+  y_mean <- mean(Y_test)
+SS_total <- sum((Y_test - y_mean)^2)
+SS_residual <- sum((Y_test - predicted_prices)^2)
+R_squared <- 1 - (SS_residual / SS_total)
+print(R_squared)
+
+```
+
