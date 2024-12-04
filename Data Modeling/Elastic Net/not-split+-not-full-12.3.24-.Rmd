@@ -17,8 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(glmnet)
 
-setwd("~/Desktop/625 final project")
-housing_data <- read_csv("final_rmna_OneHotEncoded_housing.csv")
+#setwd("~/Desktop/625 final project")
+housing_data <- read_csv("/Users/chensihan/Documents/GitHub/BIOSTAT625/Data Exploration/final_rmna_OneHotEncoded_housing.csv")
 set.seed(34)
 
 #other seed option: 55
@@ -102,7 +102,7 @@ s comes from lambda.1se
 
 ```{r}
 # Compute RMSE, MAE, MAPE and R_squared in training dataset
-predicted_prices<- predict(fit, newx = X_matrix,s=0.08663284)
+predicted_prices<- predict(fit, newx = X_matrix,s=0.02591575)
   
   # Combine actual and predicted values
 results<- data.frame(Actual = Y_matrix, Predicted = as.vector(predicted_prices))

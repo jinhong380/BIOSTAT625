@@ -17,8 +17,8 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 library(glmnet)
 
-setwd("~/Desktop/625 final project")
-housing_data <- read_csv("final_full_rmna_OneHotEncoded_housing.csv")
+#setwd("~/Desktop/625 final project")
+housing_data <- read_csv("/Users/chensihan/Documents/GitHub/BIOSTAT625/Data Exploration/final_full_rmna_OneHotEncoded_housing.csv")
 set.seed(34)
 
 #seed options: 55, 34
@@ -87,11 +87,12 @@ which.min(abs(mape))
 plot(alphas,rmse)
 plot(alphas,mape)
 plot(alphas, mae)
+alphas[6]
 ```
 Is alpha = 0 a weird value?
 
 ```{r}
-fit= cv.glmnet(X_matrix, Y_matrix, alpha = 0.05)
+fit= cv.glmnet(X_matrix, Y_matrix, alpha = alphas[6])
 plot(fit)
 # two methods to choose lambda
 fit$lambda.1se
@@ -102,7 +103,7 @@ s comes from lambda.1se
 
 ```{r}
 # Compute RMSE, MAE, MAPE and R_squared in training dataset
-predicted_prices<- predict(fit, newx = X_matrix,s=0.03750129)
+predicted_prices<- predict(fit, newx = X_matrix,s=0.08663284)
   
   # Combine actual and predicted values
 results<- data.frame(Actual = Y_matrix, Predicted = as.vector(predicted_prices))
