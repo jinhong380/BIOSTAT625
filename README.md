@@ -1,37 +1,13 @@
-# BIOSTAT625 - Final Project Group 8
+# BIOSTAT625 - Final Project Group 7
 
-This is **WEEK 13**
+## Data Exploratoin:
+Dataset initial exploration and pre-processings:
 
-The schedule rmd will be updated weekly, please check for any project updates.\
-Please work on **individual coding files** whenever possible. **Merging** might fail.
+1. Code: store all codes for specific covariate transformation/ recategorization/ and one hot encoding. Clustering folder is specifically used for handling location variable.
 
-## Data Processing: (100%)
+2. Individual_data stores all results collected from pre-processing.
 
-1. Please turn all pre-processed datasets into CSV files, and upload the dataset and code to the folder "data_exploration". *(finished)* 
-
-2. The processed whole data set is named as "housing_cleaned.csv". (We shouldn't delete outliers for price)
-   The "housing_cleaned_price.csv" deleted the outliers for price.
-   The "housing_cleaned_Price+Carpet.csv" deleted the outliers for both carpet area and price.
-   
-   *p.s. the previous version of "housing_cleaned.csv" could could be reproduced with datasets within the Data section (remember to change the path before import the datasets) using Total_data.ipynb.*
-
-3. The version of the cleaned datasets ("housing_cleaned.csv") with location properly clustered by economic status are stored in the "Data Exploration/Clustering/data" folder, named "housing_clean_clustering.csv".
-   
-   1) **housing_cleaned_final.csv**
-      
-      path: Data Exploration/housing_cleaned/housing_cleaned_final.csv;
-      
-      Description: with missing values.
-      
-   2) file name **housing_rmna_cleaned_final.csv**
-
-      path: Data Exploration/housing_cleaned/housing_rmna_cleaned_final.csv;
-
-      Description: with no missing value.
-
-      Special Reminder: The 'Transaction', 'Total Floors','location','State', 'Current Floor', 'Carpet Area' variables can be deleted when conducting the modeling process as they are either transformed to categorical variable or already conducted one-hot encoding and turned to other variables.
-
-4. The final version (all categorical variable processed with one-hot encoding) of the datasets are stored in /Data Exploration:
+3. The final version (all categorical variable processed with one-hot encoding) of the datasets are stored in /Data Exploration:
    
    1) **final_OneHotEncoded_housing.csv**: without outliers deleted for price
 
@@ -49,14 +25,11 @@ Please work on **individual coding files** whenever possible. **Merging** might 
   
       path: Data Exploration/final_full_rmna_OneHotEncoded_housing.csv;
 
-## Proposal: (100%)
+## Data Modeling:
 
-Please find the final proposaln "Project Proposal_Final.pdf" in folder "Proposal Draft".
+Contains the code and output for both elastic net and lightGBM approach. For the lightGBM folder, each dataset used was separated into a single document with corresponding result.
 
-## Data Modeling: (0%)
 
-Please upload the code and any related results to the "Data modeling" folder. 
+## Other:
 
-## Final Report: (0%)
-
-Please go to the same google drive folder for writing proposal.
+Weekly meeting information recorded in schedule; challenges record the difficulties we met during in this project.
