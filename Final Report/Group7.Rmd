@@ -1,7 +1,9 @@
 ---
-title: "**Real Estate Price Estimation Using Machine Learning Approaches**"
 output: pdf_document
 ---
+
+
+# Real Estate Price Estimation Using Machine Learning Approaches
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -73,6 +75,10 @@ Since Elastic Net can not handle missing values, we only conducted analyses on t
 
 The Elastic Net model did not perform as well as we expected on data prediction. As shown in *Figure 1* The two datasets demonstrated no significantly different predictive performances. The performance of Elastic Net is shown in *Table 1*, the RMSE, MAE, MAPE and $R^2$ in the dataset(2) are all smaller than that in the dataset(1), indicating that Elastic Net performs better on the refined dataset excluding both missing values and outliers, but that improvement is not significantly different. Overall, the RMSE, MAE, and MAPE are approximately 0.390, 0.290, and 3.21% respectively. In addition, $R^2$ is about 0.46. This shows that Elastic Net did perform ideally on our testing dataset.
 
+```{r, echo=FALSE, out.width="100%", fig.cap="placeholder",fig.align='center'}
+knitr::include_graphics("Figure 1.jpg")
+```
+
 **2) LightGBM:**
 
 
@@ -91,9 +97,15 @@ The lightGBM model used GPU acceleration to reduce computational time. We conduc
 *Model Performance:*
 
 
-The LightGBM model yielded generally good performance for data prediction. The four datasets demonstrated similar predictive performances, with the dataset without missing values and outliers performing the best as expected. Focusing on the predictive performance of our model, the RMSE of the four models ranged between 0.23 to 0.27, with MAE ranging from 0.11 to 0.13 and MAPE ranging from 1.25% to 1.46%. These relatively small metrics revealed a generally good fit for our constructed model. In addition, with $r^2$ ranging from 0.75 to 0.81 (*Figure 2*), our model also explained most of the variances of the residual in the test dataset, which suggested a good model prediction performance. In addition, the model’s prediction performance is visualized in *Figure 3*, with the middle section greatly outperforming the lowest and highest price areas.
+The LightGBM model yielded generally good performance for data prediction. The four datasets demonstrated similar predictive performances, with the dataset without missing values and outliers performing the best as expected. Focusing on the predictive performance of our model, the RMSE of the four models ranged between 0.23 to 0.27, with MAE ranging from 0.11 to 0.13 and MAPE ranging from 1.25% to 1.46%. These relatively small metrics revealed a generally good fit for our constructed model. In addition, with $r^2$ ranging from 0.75 to 0.81, our model also explained most of the variances of the residual in the test dataset, which suggested a good model prediction performance. In addition, the model’s prediction performance is visualized in *Figure 2*, with the middle section greatly outperforming the lowest and highest price areas.
+
+
+```{r, echo=FALSE, out.width="100%", fig.cap="placeholder",fig.align='center'}
+knitr::include_graphics("Figure 2.png")
+```
+
  
-Feature importance was also assessed with the best model (*Figure 4*), and the top 10 most important features were carpet area, the total floor of the building, the floor of the house, overlooking (main road, pool, garden/park), whether the housing facing east, and the number of balconies (1, 2, or 3). In general, features closely related to the housing itself, e.g., the carpet area of the house and the overlooking, are generally examined to hold more importance than features having less connection to the housing itself, such as the transaction type.
+Feature importance was also assessed with the best model (*Figure 2*), and the top 10 most important features were carpet area, the total floor of the building, the floor of the house, overlooking (main road, pool, garden/park), whether the housing facing east, and the number of balconies (1, 2, or 3). In general, features closely related to the housing itself, e.g., the carpet area of the house and the overlooking, are generally examined to hold more importance than features having less connection to the housing itself, such as the transaction type.
 
 ## Discussion and Limitations:
 
@@ -110,7 +122,7 @@ In addition, as shown in our model, location is not one of the most critical fac
 The model has a generalizability issue, as it was only trained on data from a single. The limited data source may affect the model's reliability when applied to property listings from other real estate websites or alternative sources, such as social media, newspapers, etc. The dependence on a single data source could potentially introduce selection biases and, hence, not fully represent the overall real estate market. Additionally, data quality concerns might have influenced the performance of our models. We excluded properties with prices below 100 per square foot due to apparent inconsistencies between the price values and their property descriptions, e.g., housing worth a fortune showing a price of zero. These errors in the original dataset suggest the presence of data entry errors, especially. An accurate dataset, potentially incorporating more sources, would likely improve both the model's performance and generalizability.
 
 
-Performances of the model prediction, as previously illustrated in *Figure 3*, revealed noticeably less predicting power in both lower and higher price ranges. The poor performance in the lower prices likely is attributed to data quality issues. As there are errors in housing prices below 100 sqft, we expect that prices just above this threshold might also contain wrong values and affect the model's predictive accuracy in this range. The reduced accuracy in the higher price area might be due to our feature recategorization approach. Our decision to reduce model complexity by reducing dimensions of categorical covariates such as bathroom count and balcony numbers (grouping all values above 5 into a single category) may have oversimplified the representation of higher prices. Future models could benefit from a more accurate representation of these features.
+Performances of the model prediction, as previously illustrated in *Figure 2*, revealed noticeably less predicting power in both lower and higher price ranges. The poor performance in the lower prices likely is attributed to data quality issues. As there are errors in housing prices below 100 sqft, we expect that prices just above this threshold might also contain wrong values and affect the model's predictive accuracy in this range. The reduced accuracy in the higher price area might be due to our feature recategorization approach. Our decision to reduce model complexity by reducing dimensions of categorical covariates such as bathroom count and balcony numbers (grouping all values above 5 into a single category) may have oversimplified the representation of higher prices. Future models could benefit from a more accurate representation of these features.
 
 **References:**
 
