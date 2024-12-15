@@ -29,7 +29,11 @@ Dataset initial exploration and pre-processings:
 
 Contains the code and output for both elastic net and lightGBM approach. For the lightGBM folder, each dataset used was separated into a single document with corresponding result.
 
+## Final Report:
+
+Contains the graph used for report writing and the report RMD file.
 
 ## Other:
 
 Weekly meeting information recorded in schedule; challenges record the difficulties we met during in this project.
+
