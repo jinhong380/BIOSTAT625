@@ -114,7 +114,7 @@ knitr::include_graphics("Figure 2.png")
  
 Feature importance was also assessed with the best model (*Figure 2*), and the top 10 most important features were carpet area, the total floor of the building, the floor of the house, overlooking (main road, pool, garden/park), whether the housing facing east, and the number of balconies (1, 2, or 3). In general, features closely related to the housing itself, e.g., the carpet area of the house and the overlooking, are generally examined to hold more importance than features having less connection to the housing itself, such as the transaction type.
 
-## Discussion and Limitations:
+# Discussion and Limitations:
 
 
 LightGBM outperforms the Elastic Net model for predicting house prices in our project (*Table 2* and *Table 1*). We attribute this difference in predicting power to the following factors. In terms of model characteristics, LightGBM, being a gradient boosting decision tree approach, can handle nonlinear relationships combined with complex feature interactions automatically, while Elastic Net is greatly limited by its linear assumptions. The total floor, current floor, and carpet area are the most influential features as shown previously, and their non-linear relationship with the price might be the reason for the prediction performance reduction of Elastic Net. The high variance also introduces difficulties to Elastic Net modeling process, which LightGBM handles naturally. Furthermore, LightGBM has built-in capabilities for handling missing values, making it more suitable for real-world housing data, whereas Elastic Net model requires manual preprocessing and imputation, making it less efficient for application.
@@ -131,13 +131,12 @@ The model has a generalizability issue, as it was only trained on data from a si
 
 Performances of the model prediction, as previously illustrated in *Figure 2*, revealed noticeably less predicting power in both lower and higher price ranges. The poor performance in the lower prices likely is attributed to data quality issues. As there are errors in housing prices below 100 sqft, we expect that prices just above this threshold might also contain wrong values and affect the model's predictive accuracy in this range. The reduced accuracy in the higher price area might be due to our feature recategorization approach. Our decision to reduce model complexity by reducing dimensions of categorical covariates such as bathroom count and balcony numbers (grouping all values above 5 into a single category) may have oversimplified the representation of higher prices. Future models could benefit from a more accurate representation of these features.
 
-**References:**
+# References:
 
 
 Bhojani, J. (2023). House price dataset. Kaggle. https://www.kaggle.com/datasets/juhibhojani/house-price
 
-
-## Contribution:
+*Contribution:*
 Attending weekly meetings: All members;
 Covariates pre-processing: All members, each handle 2-3 covariates;
 Elastic Net Modeling: Jennifer and Sihan;
