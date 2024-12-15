@@ -4,6 +4,8 @@ output: pdf_document
 
 
 # Real Estate Price Estimation Using Machine Learning Approaches
+Codes on GitHub: https://github.com/jinhong380/BIOSTAT625/tree/main
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -12,7 +14,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Abstract
 
-This study developed and compared two machine learning approaches — Elastic Net and LightGBM — for predicting house prices (per sqft) in India housing market using a dataset from Kaggle of the year 2023. The LightGBM model demonstrated superior performance with RMSE and outperforming the Elastic Net model. Feature importance analysis showed that physical attributes such as carpet area, floor level, and overlooking features were the strongest predictors of house prices. Although lightGBM demonstrated relatively high predicitve power, model of this project is still limited due to reliance on a single data source and the its reduced prediction accuracy for properties in extreme price ranges. Our project provide an insights for the development of practical price referencing tools in the Indian real estate market of 2023.
+This study developed and compared two machine learning approaches — Elastic Net and LightGBM — for predicting house prices (per sqft) in India housing market using a dataset from Kaggle of the year 2023. The LightGBM model demonstrated superior performance with RMSE and outperforming the Elastic Net model. Feature importance analysis showed that physical attributes such as carpet area, floor level, and overlooking features were the strongest predictors of house prices. Although LightGBM demonstrated relatively high predicitve power, model of this project is still limited due to reliance on a single data source and the its reduced prediction accuracy for properties in extreme price ranges. Our project provide an insights for the development of practical price referencing tools in the Indian real estate market of 2023.
 
 
 # Introduction
@@ -41,7 +43,7 @@ In this step, we divided the dataset into training and testing sets to evaluate 
 *Numerical variables:*
 
 
-We first split the floor variable into two sub-covariates: current floor and total floor. We then applied standardization to our numerical variables due to their skewness. The reason for this standardizing process is to balance the feature weights, as the model may give more weight to large-valued features when the range of feature values varies widely (e.g., some carpet areas are in the thousands, while the floor may be in the single digits). In addition, standardization makes data more suitable for linear models or models that require gradient optimization (e.g., Elastic Net). For lightGBM, standardization can also help the model converge quickly. 
+We first split the floor variable into two sub-covariates: current floor and total floor. We then applied standardization to our numerical variables due to their skewness. The reason for this standardizing process is to balance the feature weights, as the model may give more weight to large-valued features when the range of feature values varies widely (e.g., some carpet areas are in the thousands, while the floor may be in the single digits). In addition, standardization makes data more suitable for linear models or models that require gradient optimization (e.g., Elastic Net). For LightGBM, standardization can also help the model converge quickly. 
 
 *Categorical variables:*
 
@@ -73,9 +75,9 @@ Since Elastic Net can not handle missing values, we only conducted analyses on t
 *Model Performance:*
 
 
-The Elastic Net model did not perform as well as we expected on data prediction. As shown in *Figure 1* The two datasets demonstrated no significantly different predictive performances. The performance of Elastic Net is shown in *Table 1*, the RMSE, MAE, MAPE and $R^2$ in the dataset(2) are all smaller than that in the dataset(1), indicating that Elastic Net performs better on the refined dataset excluding both missing values and outliers, but that improvement is not significantly different. Overall, the RMSE, MAE, and MAPE are approximately 0.390, 0.290, and 3.21% respectively. In addition, $R^2$ is about 0.46. This shows that Elastic Net did perform ideally on our testing dataset.
+The Elastic Net model did not perform as well as we expected on data prediction. As shown in *Figure 1* The two datasets demonstrated no significantly different predictive performances. The performance of Elastic Net is shown in *Table 1*, the RMSE, MAE, MAPE and $R^2$ in the dataset(2) are all smaller than that in the dataset(1), indicating that Elastic Net performs better on the refined dataset excluding both missing values and outliers, but that improvement is not significantly different. Overall, the RMSE, MAE, and MAPE are approximately 0.390, 0.290, and 3.21% respectively. In addition, $R^2$ is about 0.46. This shows that Elastic Net did not perform ideally on our testing dataset.
 
-```{r, echo=FALSE, out.width="100%", fig.cap="placeholder",fig.align='center'}
+```{r, echo=FALSE, out.width="100%", fig.cap="Prediction Performaces of Elastic Net Model    Table 1: Performance Metrics on Test Set ",fig.align='center'}
 knitr::include_graphics("Figure 1.jpg")
 ```
 
@@ -91,16 +93,21 @@ LightGBM (Light Gradient Boosting Machine) is a modeling approach based on leaf-
 *Model Construction:*
 
 
-The lightGBM model used GPU acceleration to reduce computational time. We conducted analyses on four dataset variations: (1) the complete dataset with missing values, (2) a dataset with missing values but excluding outliers, (3) a dataset with all complete cases (no missing values), and (4) a refined dataset excluding both missing values and outliers. The latter two datasets were used to compare the performance between elastic net regression and lightGBM approaches. Given the wide range of housing prices (response), we applied a logarithmic transformation to Price to enhance model performance. Early stopping with a patience value of 50 iterations was applied to prevent overfitting. Additionally, to find the optimal hyperparameter combination for the model, hyperparameter tuning was performed with a 5-fold cross-validation using *RandomizedSearchCV()*.
+The LightGBM model used GPU acceleration to reduce computational time. We conducted analyses on four dataset variations: (1) the complete dataset with missing values, (2) a dataset with missing values but excluding outliers, (3) a dataset with all complete cases (no missing values), and (4) a refined dataset excluding both missing values and outliers. The latter two datasets were used to compare the performance between Elastic Net regression and LightGBM approaches. Given the wide range of housing prices (response), we applied a logarithmic transformation to Price to enhance model performance. Early stopping with a patience value of 50 iterations was applied to prevent overfitting. Additionally, to find the optimal hyperparameter combination for the model, hyperparameter tuning was performed with a 5-fold cross-validation using *RandomizedSearchCV()*.
 
 
 *Model Performance:*
 
 
-The LightGBM model yielded generally good performance for data prediction. The four datasets demonstrated similar predictive performances, with the dataset without missing values and outliers performing the best as expected. Focusing on the predictive performance of our model, the RMSE of the four models ranged between 0.23 to 0.27, with MAE ranging from 0.11 to 0.13 and MAPE ranging from 1.25% to 1.46%. These relatively small metrics revealed a generally good fit for our constructed model. In addition, with $r^2$ ranging from 0.75 to 0.81, our model also explained most of the variances of the residual in the test dataset, which suggested a good model prediction performance. In addition, the model’s prediction performance is visualized in *Figure 2*, with the middle section greatly outperforming the lowest and highest price areas.
+The LightGBM model yielded generally good performance for data prediction (*Table 2*). The four datasets demonstrated similar predictive performances, with the dataset without missing values and outliers performing the best as expected. Focusing on the predictive performance of our model, the RMSE of the four models ranged between 0.23 to 0.27, with MAE ranging from 0.11 to 0.13 and MAPE ranging from 1.25% to 1.46%. These relatively small metrics revealed a generally good fit for our constructed model. In addition, with $r^2$ ranging from 0.75 to 0.81, our model also explained most of the variances of the residual in the test dataset, which suggested a good model prediction performance. In addition, the model’s prediction performance is visualized in *Figure 2*, with the middle section greatly outperforming the lowest and highest price areas.
 
+```{r, echo=FALSE, out.width="60%", fig.align='center'}
+knitr::include_graphics("Table 2.png")
+```
 
-```{r, echo=FALSE, out.width="100%", fig.cap="placeholder",fig.align='center'}
+                         Table 2: Model Performance Metrics for LightGBM
+
+```{r, echo=FALSE, out.width="100%", fig.cap="Model Performance Visualization of the Full Dataset with LightGBM: Feature Importance (left); Prediction Performance with MAPE(%) (middle); Prediction against Actual Value (right)",fig.align='center'}
 knitr::include_graphics("Figure 2.png")
 ```
 
@@ -110,7 +117,7 @@ Feature importance was also assessed with the best model (*Figure 2*), and the t
 ## Discussion and Limitations:
 
 
-LightGBM outperforms the elastic net model for predicting house prices in our project (*Table 2*). We attribute this difference in predicting power to the following factors. In terms of model characteristics, lightGBM, being a gradient boosting decision tree approach, can handle nonlinear relationships combined with complex feature interactions automatically, while elastic net is greatly limited by its linear assumptions. The total floor, current floor, and carpet area are the most influential features as shown previously, and their non-linear relationship with the price might be the reason for the prediction performance reduction of elastic net. The high variance also introduces difficulties to elastic net modeling process, which lightGBM handles naturally. Furthermore, LightGBM has built-in capabilities for handling missing values, making it more suitable for real-world housing data, whereas elastic net model requires manual preprocessing and imputation, making it less efficient for application.
+LightGBM outperforms the Elastic Net model for predicting house prices in our project (*Table 2* and *Table 1*). We attribute this difference in predicting power to the following factors. In terms of model characteristics, LightGBM, being a gradient boosting decision tree approach, can handle nonlinear relationships combined with complex feature interactions automatically, while Elastic Net is greatly limited by its linear assumptions. The total floor, current floor, and carpet area are the most influential features as shown previously, and their non-linear relationship with the price might be the reason for the prediction performance reduction of Elastic Net. The high variance also introduces difficulties to Elastic Net modeling process, which LightGBM handles naturally. Furthermore, LightGBM has built-in capabilities for handling missing values, making it more suitable for real-world housing data, whereas Elastic Net model requires manual preprocessing and imputation, making it less efficient for application.
 
 
 Through LightGBM modeling, we could assess the covariates' feature importance in our data. By far, the most important features were the carpet area, total floors, and the current floor of the property. Carpet area being an important feature makes sense, as once a new homeowner has moved in, it’s better to have more space for furniture and other belongings which make the home a more comfortable place to live. In addition, having an apartment or flat on a higher floor is usually more desirable for a nicer view. After that, the scenery that the home was overlooking (Garden/Park, Main Road, Pool) was relatively important as well. This may partially be because home buyers desire a pleasant view, but these categories also show what the area around the home is like. For instance, a home in a dense urban area will most likely have a view of a road, while a view of a pool means that there is, in fact, a pool nearby. 
@@ -131,10 +138,6 @@ Bhojani, J. (2023). House price dataset. Kaggle. https://www.kaggle.com/datasets
 
 
 ## Contribution:
-
-
-Codes on GitHub: https://github.com/jinhong380/BIOSTAT625/tree/main
-
 Attending weekly meetings: All members;
 Covariates pre-processing: All members, each handle 2-3 covariates;
 Elastic Net Modeling: Jennifer and Sihan;
